@@ -13,6 +13,12 @@ toggleSkillsButton?.addEventListener("click", () => {
   }
 });
 
+// Resume Form Functionality
+
+
+
+
+
     const printButton = document.createElement('button');
     printButton.textContent = 'Print Resume';
     printButton.style.position = 'fixed';

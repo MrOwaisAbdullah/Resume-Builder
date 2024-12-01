@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleSkillsButton.textContent = "Show Skills";
         }
     });
-    // Add print functionality
+    // Resume Form Functionality
     const printButton = document.createElement('button');
     printButton.textContent = 'Print Resume';
     printButton.style.position = 'fixed';
@@ -25,11 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     printButton.style.borderRadius = '5px';
     printButton.style.cursor = 'pointer';
     printButton.addEventListener('click', () => {
-        // Create a new window for printing
         document.body.classList.add('print-resume');
-        // Trigger browser print dialog
         window.print();
-        // Remove print class after printing
         document.body.classList.remove('print-resume');
     });
     document.body.appendChild(printButton);

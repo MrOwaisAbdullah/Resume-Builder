@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0, maximum-scale=1.0">
+    <title>Resume Builder by Owais Abdullah</title>
+    <link rel="stylesheet" href="/Styles/formstyles.css" />
+    <link rel="stylesheet" href="/Styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<body>
+    <body>
+        <header class="header">
+          <h1 class="site-title">Dynamic Resume Builder</h1>
+          <ul class="nav">
+            <li><a href="/index.html">Home</a></li>
+            <li><a class="nav-button" style="color: #0056b3; border-radius: 5px;   font-size: 1rem; padding: 10px; background-color: #ffff; " href="/generate-resume.html">Generate Resume</a></li>
+          </ul>
+        </header>
+
+        <h1 id="heading" class="page-title">Build Your Resume!</h1>
+    <form id="resume-form">
+        <h3>Personal Details</h3>
+        <div id="form-personal-details">
+          <label for="fullName">Name:</label>
+          <input type="text" id="fullNameInput" name="fullName" required />
+
+          <label for="jobTitle">Job Title:</label>
+          <input type="text" id="jobTitleInput" name="jobTitle" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="emailInput" name="email" required />
+
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phoneInput" name="phone" required />
+
+          <label for="location">Location:</label>
+          <input type="text" id="locationInput" name="location" required />
+        </div>
+
+        <div id="form-education-section">
+          <h3>Education</h3>
+          <div class="education-entry">
+            <span class="remove">
+            <img class="remove-icon" src="/Public/close-icon.svg" alt="Close Icon"> 
+            </span>
+            <label>Degree:</label>
+            <input type="text" name="degree" required />
+
+            <label>Institution:</label>
+            <input type="text" name="institution" required />
+
+            <label>Duration:</label>
+            <input type="text" name="duration" required />
+          </div>
+          <button type="button" id="addEducation">Add More Education</button>
+        </div>
+
+        <div id="form-work-section">
+          <h3>Work Experience</h3>
+          <div class="work-entry">
+            <span class="remove">
+              <img class="remove-icon" src="/Public/close-icon.svg" alt="Close Icon"> 
+              </span>
+            <label>Job Title:</label>
+            <input type="text" name="jobTitle" required />
+
+            <label>Company:</label>
+            <input type="text" name="company" required />
+
+            <label>Duration:</label>
+            <input type="text" name="duration" required />
+
+            <label>Responsibilities:</label>
+            <textarea name="responsibilities" maxlength="150" required></textarea>
+          </div>
+          <button type="button" id="addWork">Add More Experience</button>
+        </div>
+
+        <div id="form-strengths-section">
+          <h3>Soft Skills</h3>
+          <div class="strengths-entry">
+            <span class="remove">
+              <img class="remove-icon" src="/Public/close-icon.svg" alt="Close Icon"> 
+              </span>
+            <label>Strength:</label>
+            <input type="text" name="strength" required />
+            
+            <label>Description:</label>
+            <textarea name="strengthDescription" maxlength="80" required></textarea>
+          </div>
+          <button type="button" id="addStrength">Add More Strength</button>
+        </div>
+
+        <div id="form-skills-section">
+          <h3>Skills</h3>
+          <input
+            type="text"
+            id="skills_Input"
+            placeholder="Enter skills separated by commas"
+            required
+          />
+        </div>
+
+        <div id="form-about-section">
+          <label for="aboutMe">About Me:</label>
+          <textarea id="aboutInput" name="aboutMe" maxlength="200" required></textarea>
+        </div>
+        <label for="profilePic">Profile Picture:</label>
+        <input type="file" id="profile-pic-file" name="profilePic" accept="image/*" />
+
+        <button id="submit-resume-btn" type="submit">Generate Resume</button>
+      </form>
+      
+      <!-- Generated Resume -->
+      <main id="main" class="main-container">
+        <div class="resume-container">
+          <div class="left-section">
+            <div class="profile-container">
+              <h1 id="full-name">
+
+              </h1>
+              <p id="job-title" class="subtitle">
+                
+              </p>
+              <div class="contact-info">
+                <span id="phone">
+
+                </span>
+                <span id="email">
+
+                </span>
+                <span id="location">
+
+                </span>
+              </div>
+            </div>
+  
+            <section class="summary">
+              <h2>SUMMARY</h2>
+              <p id="about-me">
+                
+              </p>
+            </section>
+            <section class="experience">
+              <h2>EXPERIENCE</h2>
+              <div id="experience-details" class="experience-details">
+
+              </div>
+            </section>
+  
+            <section class="education">
+              <h2>EDUCATION</h2>
+              <div id="education-details" class="education-details">
+                
+              </div>
+            </section>
+          </div>
+  
+          <div class="right-section">
+            <section class="profile-pic-section">
+              <img
+                class="profile-pic"
+                id="profile-pic"
+                src=""
+                alt="Profile Picture"
+              />
+            </section>
+  
+            <section class="strengths">
+              <h2>STRENGTHS</h2>
+              <div id="strength-details" class="strength-details">
+              
+              </div>
+            </section>
+  
+            <section id="skill" class="skills">
+              <h2>SKILLS</h2>
+              <div id="skills-details">
+                
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+      <script src="/Scripts/resume.js"></script>
+      <script src="/Scripts/form.js"></script>
+</body>
+</html>
