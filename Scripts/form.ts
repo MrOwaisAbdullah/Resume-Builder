@@ -14,7 +14,7 @@ const form = document.getElementById("resume-form") as HTMLFormElement;
           <img class="remove-icon" src="/Public/close-icon.svg" alt="Close Icon"> 
         </span>
         <label>Strength:</label>
-        <input type="text" name="strength" required />
+        <input type="text" name="strength" maxlength="30" required />
         
         <label>Description:</label>
         <textarea name="strengthDescription" maxlength="80" required></textarea>
@@ -42,11 +42,11 @@ const form = document.getElementById("resume-form") as HTMLFormElement;
           <img class="remove-icon" src="/Public/close-icon.svg" alt="Close Icon"> 
         </span>
         <label>Degree:</label>
-        <input type="text" name="degree" required />
+        <input type="text" name="degree" maxlength="50" required />
         <label>Institution:</label>
-        <input type="text" name="institution" required />
+        <input type="text" name="institution" maxlength="50" required />
         <label>Duration:</label>
-        <input type="text" name="duration" required />
+        <input type="text" name="duration" maxlength="20" required />
       `;
 
       educationSection.insertBefore(
@@ -68,11 +68,11 @@ const form = document.getElementById("resume-form") as HTMLFormElement;
           <img class="remove-icon" src="/Public/close-icon.svg" alt="Close Icon"> 
         </span>
         <label>Job Title:</label>
-        <input type="text" name="jobTitle" required />
+        <input type="text" name="jobTitle" maxlength="50" required />
         <label>Company:</label>
-        <input type="text" name="company" required />
+        <input type="text" name="company" maxlength="50" required />
         <label>Duration:</label>
-        <input type="text" name="duration" required />
+        <input type="text" name="duration" maxlength="20" required />
         <label>Responsibilities:</label>
         <textarea name="responsibilities" maxlength="150" required></textarea>
       `;

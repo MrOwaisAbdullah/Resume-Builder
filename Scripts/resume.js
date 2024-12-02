@@ -5,6 +5,74 @@ document.addEventListener("DOMContentLoaded", () => {
     const profilePicPreview = document.getElementById("profile-pic");
     const resumeContainer = document.getElementById("main");
     const pageTitle = document.getElementById("heading");
+    const options = document.getElementById("options");
+    // Edit Mode
+    const editModeButton = document.getElementById('edit-resume-btn');
+    // Function to make elements editable
+    function makeEditable(selector) {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(element => {
+            element.setAttribute('contenteditable', 'true');
+            element.classList.add('editable-field');
+        });
+    }
+    // Function to remove editability
+    function removeEditable(selector) {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(element => {
+            element.removeAttribute('contenteditable');
+            element.classList.remove('editable-field');
+        });
+    }
+    // Edit Mode Toggle Button
+    let isEditMode = false;
+    editModeButton.addEventListener('click', () => {
+        isEditMode = !isEditMode;
+        if (isEditMode) {
+            // Make elements editable
+            makeEditable('#full-name');
+            makeEditable('#job-title');
+            makeEditable('#phone');
+            makeEditable('#email');
+            makeEditable('#location');
+            makeEditable('#about-me');
+            makeEditable('.education-details h3');
+            makeEditable('.education-details .date');
+            makeEditable('.education-details .school-details');
+            makeEditable('.job-header h3');
+            makeEditable('.job-header .date');
+            makeEditable('.company');
+            makeEditable('.experience-details ul li');
+            makeEditable('.strengths ul h3');
+            makeEditable('.strengths ul p');
+            makeEditable('#skill ul li');
+            editModeButton.textContent = 'Save Changes';
+            editModeButton.classList.add('save-mode');
+            scrollToTop();
+        }
+        else {
+            // Remove editability
+            removeEditable('#full-name');
+            removeEditable('#job-title');
+            removeEditable('#phone');
+            removeEditable('#email');
+            removeEditable('#location');
+            removeEditable('#about-me');
+            removeEditable('.education-details h3');
+            removeEditable('.education-details .date');
+            removeEditable('.education-details .school-details');
+            removeEditable('.job-header h3');
+            removeEditable('.job-header .date');
+            removeEditable('.company');
+            removeEditable('.experience-details ul li');
+            removeEditable('.strengths ul h3');
+            removeEditable('.strengths ul p');
+            removeEditable('#skill ul li');
+            editModeButton.textContent = 'Edit Resume';
+            editModeButton.classList.remove('save-mode');
+            scrollToTop();
+        }
+    });
     function buildResume() {
         var _a;
         const fullName = document.getElementById("fullNameInput").value;
@@ -50,7 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
             if (profilePicFile.size > 5 * 1024 * 1024) {
-                // 5MB limit
                 alert("File size must be less than 5MB.");
                 return;
             }
@@ -66,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("email").innerHTML = `<i class="fa-solid fa-envelope"></i><p>${email}</p>`;
         document.getElementById("phone").innerHTML = `<i class="fa-solid fa-phone"></i><p>${phone}</p>`;
         document.getElementById("location").innerHTML = `<i class="fa-solid fa-map-pin"></i><p>${location}</p>`;
-        document.getElementById("about-me").innerText = aboutMe;
+        document.getElementById("about").innerHTML = `<p id="about-me">${aboutMe}</p>`;
         const educationSection = document.getElementById("education-details");
         educationSection.innerHTML = educationData
             .map((edu) => `<div class="education-header">
@@ -118,6 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
         pageTitle.textContent = "Your Resume is Generated🎉";
         resumeContainer.style.display = "block";
         form.style.display = "none";
+        options.style.display = "block";
         scrollToTop();
     });
 });

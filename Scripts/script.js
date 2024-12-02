@@ -12,22 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleSkillsButton.textContent = "Show Skills";
         }
     });
-    // Resume Form Functionality
-    const printButton = document.createElement('button');
-    printButton.textContent = 'Print Resume';
-    printButton.style.position = 'fixed';
-    printButton.style.bottom = '20px';
-    printButton.style.right = '20px';
-    printButton.style.padding = '10px 20px';
-    printButton.style.backgroundColor = '#4CAF50';
-    printButton.style.color = 'white';
-    printButton.style.border = 'none';
-    printButton.style.borderRadius = '5px';
-    printButton.style.cursor = 'pointer';
+    // Resume Print Functionality
+    const printButton = document.getElementById('print-resume-btn');
     printButton.addEventListener('click', () => {
-        document.body.classList.add('print-resume');
         window.print();
-        document.body.classList.remove('print-resume');
     });
-    document.body.appendChild(printButton);
 });

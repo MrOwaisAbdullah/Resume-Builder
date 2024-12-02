@@ -143,3 +143,9 @@ header{
     background-color: #3b4691;
   }
   
+  @media (max-width: 1024px) {
+    #resume-form{
+      width: 95%;
+      margin: auto;
+    }
+  }

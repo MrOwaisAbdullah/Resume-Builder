@@ -23,19 +23,19 @@
         <h3>Personal Details</h3>
         <div id="form-personal-details">
           <label for="fullName">Name:</label>
-          <input type="text" id="fullNameInput" name="fullName" required />
+          <input type="text" id="fullNameInput" name="fullName" maxlength="30"required />
 
           <label for="jobTitle">Job Title:</label>
-          <input type="text" id="jobTitleInput" name="jobTitle" required />
+          <input type="text" id="jobTitleInput" name="jobTitle" maxlength="50" required />
 
           <label for="email">Email:</label>
-          <input type="email" id="emailInput" name="email" required />
+          <input type="email" id="emailInput" name="email" maxlength="40"required />
 
           <label for="phone">Phone:</label>
-          <input type="tel" id="phoneInput" name="phone" required />
+          <input type="tel" id="phoneInput" name="phone" maxlength="15"required />
 
           <label for="location">Location:</label>
-          <input type="text" id="locationInput" name="location" required />
+          <input type="text" id="locationInput" name="location" maxlength="80"required />
         </div>
 
         <div id="form-education-section">
@@ -45,13 +45,13 @@
             <img class="remove-icon" src="/Public/close-icon.svg" alt="Close Icon"> 
             </span>
             <label>Degree:</label>
-            <input type="text" name="degree" required />
+            <input type="text" name="degree" maxlength="50" required />
 
             <label>Institution:</label>
-            <input type="text" name="institution" required />
+            <input type="text" name="institution" maxlength="50" required />
 
             <label>Duration:</label>
-            <input type="text" name="duration" required />
+            <input type="text" name="duration" maxlength="20" required />
           </div>
           <button type="button" id="addEducation">Add More Education</button>
         </div>
@@ -63,13 +63,13 @@
               <img class="remove-icon" src="/Public/close-icon.svg" alt="Close Icon"> 
               </span>
             <label>Job Title:</label>
-            <input type="text" name="jobTitle" required />
+            <input type="text" name="jobTitle" maxlength="50" required />
 
             <label>Company:</label>
-            <input type="text" name="company" required />
+            <input type="text" name="company" maxlength="50" required />
 
             <label>Duration:</label>
-            <input type="text" name="duration" required />
+            <input type="text" name="duration" maxlength="20" required />
 
             <label>Responsibilities:</label>
             <textarea name="responsibilities" maxlength="150" required></textarea>
@@ -84,7 +84,7 @@
               <img class="remove-icon" src="/Public/close-icon.svg" alt="Close Icon"> 
               </span>
             <label>Strength:</label>
-            <input type="text" name="strength" required />
+            <input type="text" name="strength" maxlength="30" required />
             
             <label>Description:</label>
             <textarea name="strengthDescription" maxlength="80" required></textarea>
@@ -117,7 +117,7 @@
         <div class="resume-container">
           <div class="left-section">
             <div class="profile-container">
-              <h1 id="full-name">
+              <h1 id="full-name" >
 
               </h1>
               <p id="job-title" class="subtitle">
@@ -138,9 +138,9 @@
   
             <section class="summary">
               <h2>SUMMARY</h2>
-              <p id="about-me">
-                
-              </p>
+              <div id="about">
+
+              </div>
             </section>
             <section class="experience">
               <h2>EXPERIENCE</h2>
@@ -183,7 +183,14 @@
           </div>
         </div>
       </main>
+
+      <div id="options" Class="resume-options">
+        <h2>Resume Options</h2>
+        <button id="edit-resume-btn" class="edit-mode-btn" type="button">Edit Resume</button>
+        <button id="print-resume-btn" type="button">Print Resume</button>
+      </div>
       <script src="/Scripts/resume.js"></script>
       <script src="/Scripts/form.js"></script>
+      <script src="/Scripts/script.js"></script>
 </body>
 </html>
