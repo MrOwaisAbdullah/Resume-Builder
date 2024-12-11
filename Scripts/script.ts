@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
       linkContainer.style.display === "none" ||
       linkContainer.style.display === ""
     ) {
-      options.style.height = "10rem";
+      options.style.height = "12rem";
       linkContainer.style.display = "flex";
 
       // Hiding link after 10 seconds
