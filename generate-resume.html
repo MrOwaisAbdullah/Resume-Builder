@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/Styles/formstyles.css" />
     <link rel="stylesheet" href="/Styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
 </head>
 <body>
     <body>
@@ -114,7 +115,7 @@
       
       <!-- Generated Resume -->
       <main id="main" class="main-container">
-        <div class="resume-container">
+        <div id="resume" class="resume-container">
           <div class="left-section">
             <div class="profile-container">
               <h1 id="full-name" >
@@ -186,8 +187,13 @@
 
       <div id="options" Class="resume-options">
         <h2>Resume Options</h2>
-        <button id="edit-resume-btn" class="edit-mode-btn" type="button">Edit Resume</button>
-        <button id="print-resume-btn" type="button">Print Resume</button>
+        <button id="edit-resume-btn" type="button">Edit Resume</button>
+        <button id="print-resume-btn" type="button">Download/Print Resume</button>
+        <button id="share-btn" type="button">Share Resume</button>
+        <div id="link-container">
+          <a id="shareableLink" href="#" target="_blank"></a>
+          <button id="copyLink" type="button">Copy Link</button>
+        </div>
       </div>
       <script src="/Scripts/resume.js"></script>
       <script src="/Scripts/form.js"></script>

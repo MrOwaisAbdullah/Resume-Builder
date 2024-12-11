@@ -1,7 +1,7 @@
 "use strict";
 var _a, _b, _c;
 const form = document.getElementById("resume-form");
-// Add Strength Sections
+// Add More Strength Sections
 function addStrengthEntry() {
     const strengthsSection = document.getElementById("form-strengths-section");
     const newEntry = document.createElement("div");
@@ -18,9 +18,7 @@ function addStrengthEntry() {
       `;
     strengthsSection.insertBefore(newEntry, document.getElementById("addStrength"));
 }
-(_a = document
-    .getElementById("addStrength")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", addStrengthEntry);
-// Add Education Sections
+// Add More Education Sections
 function addEducationEntry() {
     const educationSection = document.getElementById("form-education-section");
     const newEntry = document.createElement("div");
@@ -38,7 +36,7 @@ function addEducationEntry() {
       `;
     educationSection.insertBefore(newEntry, document.getElementById("addEducation"));
 }
-// Add Experience Sections
+// Add More Experience Sections
 function addWorkEntry() {
     const workSection = document.getElementById("form-work-section");
     const newEntry = document.createElement("div");
@@ -58,13 +56,16 @@ function addWorkEntry() {
       `;
     workSection.insertBefore(newEntry, document.getElementById("addWork"));
 }
-(_b = document
-    .getElementById("addEducation")) === null || _b === void 0 ? void 0 : _b.addEventListener("click", addEducationEntry);
-(_c = document.getElementById("addWork")) === null || _c === void 0 ? void 0 : _c.addEventListener("click", addWorkEntry);
+(_a = document
+    .getElementById("addEducation")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", addEducationEntry);
+(_b = document.getElementById("addWork")) === null || _b === void 0 ? void 0 : _b.addEventListener("click", addWorkEntry);
+(_c = document
+    .getElementById("addStrength")) === null || _c === void 0 ? void 0 : _c.addEventListener("click", addStrengthEntry);
 // Remove Extra Sections
 form === null || form === void 0 ? void 0 : form.addEventListener("click", (event) => {
     const target = event.target;
-    if (target.classList.contains("remove-icon") || target.classList.contains("remove")) {
+    if (target.classList.contains("remove-icon") ||
+        target.classList.contains("remove")) {
         const confirmRemove = confirm("Are you sure you want to remove this section?");
         if (confirmRemove) {
             const sectionToRemove = target.closest(".strengths-entry, .education-entry, .work-entry");
