@@ -1,107 +1,148 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
 
 .page-title {
-    font-size: 3rem;
-    text-align: center;
-    color: #4c58af;
-    margin-bottom: 5rem;
+  font-size: 3rem;
+  text-align: center;
+  color: #4c58af;
+  margin-bottom: 5rem;
 }
 
 #resume-form {
-    width: 100%;
-    max-width: 900px;
-    margin-top: 20px;
-    margin: auto;
-    margin-bottom: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    transition: all ease 2s;
-    padding: 20px;
-    flex-direction: column;
-  }
-  
-  #resume-form input,
-  #resume-form textarea {
-    width: 98%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    justify-content: center;
-  }
-  .education-entry,
-  .work-entry,
-  .strengths-entry {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  }
-  
-  .remove-icon {
-    padding: 2px 3px;
-    font-size: 1.1rem;
-    background-color: #dfd0d0;
-    display: flex;
-    justify-content: flex-end;
-    text-align: right;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .remove{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  .remove-icon:hover {
-    background-color: #e35252;
-    }
+  width: 100%;
+  max-width: 900px;
+  margin-top: 20px;
+  margin: auto;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transition: all ease 2s;
+  padding: 20px;
+  flex-direction: column;
+}
 
-  #addWork,
-  #addEducation,
-  #addStrength {
-    background-color: #3aaa4b;
-    padding: 15px;
+.form-row {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for mobile */
+  margin-bottom: 15px;
+  justify-items: center;
+  align-items: center;
+}
+
+.form-group {
+  flex: 1; /* Allow the fields to grow */
+  min-width: 250px; /* Minimum width for each field */
+  margin-right: 15px; /* Space between fields */
+}
+
+.form-group:last-child {
+  margin-right: 0; 
+  width: 100%;
+}
+
+#locationInput{
+  width: 100%;
+}
+#resume-form input,
+#resume-form textarea {
+  width: 98%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  justify-content: center;
+}
+.education-entry,
+.work-entry,
+.strengths-entry {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.remove-icon {
+  padding: 2px 3px;
+  font-size: 1.1rem;
+  background-color: #dfd0d0;
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.remove {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.remove-icon:hover {
+  background-color: #e35252;
+}
+
+#addWork,
+#addEducation,
+#addStrength {
+  background-color: #3aaa4b;
+  padding: 15px;
+  margin: auto;
+  display: flex;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+#addWork:hover,
+#addEducation:hover {
+  background-color: #21802f;
+}
+
+#profilePic {
+  border: none;
+  margin: 10px;
+}
+
+.profile-div, .color-div {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+
+.color-div label, .profile-div label {
+  font-size: 14px;
+}
+
+/* Style for the color selection label */
+#colorSelect {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+
+#submit-resume-btn {
+  padding: 2vh 6vw;
+  background-color: #4c58af;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: auto;
+  display: flex;
+  margin-bottom: 2vh;
+}
+
+#submit-resume-btn:hover {
+  background-color: #3b4691;
+}
+
+@media (max-width: 1024px) {
+  #resume-form {
+    width: 95%;
     margin: auto;
-    display: flex;
-    border-radius: 5px;
-    border: none;
-    color: #fff;
-    cursor: pointer;
   }
-  
-  #addWork:hover,
-  #addEducation:hover {
-    background-color: #21802f;
-  }
-  
-  #profilePic{
-    border: none;
-    margin: 10px;
-  }
-  
-  #submit-resume-btn {
-    padding: 2vh 6vw;
-    background-color: #4c58af;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: auto;
-    display: flex;
-    margin-bottom: 2vh ;
-  }
-  
-  #submit-resume-btn:hover {
-    background-color: #3b4691;
-  }
-  
-  @media (max-width: 1024px) {
-    #resume-form{
-      width: 95%;
-      margin: auto;
-    }
-  }
+}

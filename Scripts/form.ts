@@ -1,3 +1,6 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const colorSelect = document.getElementById("colorSelect") as HTMLSelectElement;
+
 const form = document.getElementById("resume-form") as HTMLFormElement;
 
 // Add More Strength Sections
@@ -100,4 +103,12 @@ form?.addEventListener("click", (event) => {
       sectionToRemove?.remove();
     }
   }
+});
+
+// Changing color of the resume 
+colorSelect.addEventListener("change", (event) => {
+    const selectedColor = (event.target as HTMLSelectElement).value; // Geting the selected color
+    document.documentElement.style.setProperty('--resume-color', selectedColor); // Updating the primary color variable
+  });
+
 });

@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
 
+:root {
+  --resume-color: #0db99c; 
+}
+
 /* Reseting styles */
 * {
   margin: 0;
@@ -108,7 +112,7 @@ header {
 
 .contact-info i {
   margin-right: 10px;
-  color: #0db99c;
+  color: var(--resume-color);
 }
 
 section h2 {
@@ -194,7 +198,7 @@ ul {
 .right-section {
   display: grid;
   gap: 20px;
-  background-color: #0db99c;
+  background-color: var(--resume-color);
   max-height: 1200px;
   max-width: 320px;
   min-width: 300px;
@@ -373,7 +377,7 @@ footer {
 }
 
 #user-title{
-  color: #2ecc71;
+  color: var(--resume-color);
 }
 
 @media (max-width: 1024px) {
@@ -393,7 +397,7 @@ footer {
 @media print {
   html,
   body {
-    width: 794px !important;
+    width: 820px !important;
     height: 1123px !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -410,21 +414,21 @@ footer {
   .right-section {
     height: 1220px !important;
     max-height: 1220px !important;
-    max-width: 320px !important;
+    max-width: 350px !important;
     margin: auto;
   }
 
   .left-section {
     max-height: 1220px !important;
-    max-width: 470px !important;
+    max-width: 480px !important;
     height: 1220px !important;
     margin: 0 !important;
     padding: 30px !important;
   }
 
   .resume-container {
-    width: 800px !important;
-    max-width: 800px !important;
+    width: 820px !important;
+    max-width: 820px !important;
     height: 1220px !important;
     max-height: 1220px !important;
     min-height: 1123px !important;
@@ -484,8 +488,9 @@ footer {
   }
 
   @page {
-    size: 794px 1123px;
+    size: 820px 1123px;
     margin: 0 !important;
+    padding: 0 !important;
   }
 
   * {
@@ -494,12 +499,13 @@ footer {
   }
 
   .right-section {
+    width: 350px !important;
     margin-right: -10px !important;
   }
 
   body {
     background-color: #fff;
-    width: 794px;
+    min-width: 820px;
   }
 
   /* Hiding sections that is not supposed to print */

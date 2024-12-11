@@ -1,4 +1,5 @@
 "use strict";
+const form = document.getElementById("resume-form");
 const toggleSkillsButton = document.getElementById("toggleSkills");
 const skillsSection = document.getElementById("skill");
 const shareBtn = document.getElementById("share-btn");
@@ -11,6 +12,7 @@ const profilePicPreview = document.getElementById("profile-pic");
 const resumeContainer = document.getElementById("main");
 const pageTitle = document.getElementById("heading");
 const printButton = document.getElementById("print-resume-btn");
+const rightSection = document.querySelector(".right-section");
 let shareableLink = "";
 document.addEventListener("DOMContentLoaded", () => {
     var _a;
@@ -68,6 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         description: entry.querySelector('textarea[name="strengthDescription"]').value,
                     })),
                     profilePic: profilePicDataUrl,
+                    // Collecting the selected color
+                    selectedColor: document.getElementById("colorSelect").value
                 };
                 // Generating a Unique ID
                 const uniqueID = Date.now().toString(36);
@@ -119,6 +123,8 @@ document.addEventListener("DOMContentLoaded", () => {
         // Skills
         document.getElementById("skills_Input").value =
             resumeData.skills.join(",");
+        // Seting the selected color in the form
+        document.getElementById("colorSelect").value = resumeData.selectedColor;
         // Dynamically add and populate Education entries
         const educationSection = document.getElementById("form-education-section");
         resumeData.educationData.forEach((edu, index) => {
@@ -187,9 +193,9 @@ document.addEventListener("DOMContentLoaded", () => {
             data.fullName;
         document.getElementById("job-title").innerText =
             data.jobTitle;
-        document.getElementById("email").innerHTML = `<i class="fa-solid fa-envelope"></i><p>${data.email}</p>`;
-        document.getElementById("phone").innerHTML = `<i class="fa-solid fa-phone"></i><p>${data.phone}</p>`;
-        document.getElementById("location").innerHTML = `<i class="fa-solid fa-map-pin"></i><p>${data.location}</p>`;
+        document.getElementById("email").innerHTML = `<span style="color: ${data.selectedColor}; margin-right: 5px;" class="fa-solid fa-envelope"></span><p>${data.email}</p>`;
+        document.getElementById("phone").innerHTML = `<span style="color: ${data.selectedColor}; margin-right: 5px;" class="fa-solid fa-phone"></span><p>${data.phone}</p>`;
+        document.getElementById("location").innerHTML = `<span style="color: ${data.selectedColor}; margin-right: 5px;" class="fa-solid fa-map-pin"></span><p>${data.location}</p>`;
         document.getElementById("about").innerHTML = `<p id="about-me">${data.aboutMe}</p>`;
         // Display Education
         const educationSection = document.getElementById("education-details");
@@ -233,9 +239,11 @@ document.addEventListener("DOMContentLoaded", () => {
         skillsSection.innerHTML = `<ul>${data.skills
             .map((skill) => `<li>${skill}</li>`)
             .join("")}</ul>`;
-        pageTitle.innerHTML = `<h1 class="page-title">Shared Resume of <span id="user-title">${data.fullName}</span></h1>`;
+        // Set the color for the page title
+        pageTitle.innerHTML = `<h1 class="page-title">Resume of <span style="color: ${data.selectedColor};">${data.fullName}</span></h1>`;
         resumeContainer.style.display = "block";
         form.style.display = "none";
+        rightSection.style.backgroundColor = data.selectedColor;
         options.style.display = "block";
         scrollToTop();
     }
